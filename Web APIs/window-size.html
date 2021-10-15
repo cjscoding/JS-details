@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+    <style>
+        .box {
+            background-color: rgb(247, 205, 89);
+            display: inline-block;
+            font-size: 50px;
+            padding: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        const box = document.querySelector(".box");
+        function updateSize() {
+            box.innerHTML = `
+            window.screen : ${window.screen.width}, ${window.screen.height}</br>
+            window.outer : ${window.outerWidth}, ${window.outerHeight}</br>
+            window.inner : ${window.innerWidth}, ${window.innerHeight}</br>
+            documentElement.clientWidth&Height : ${document.documentElement.clientWidth}, ${document.documentElement.clientHeight}
+            `;
+        }
+
+        updateSize();
+        window.addEventListener('resize', () => {
+            updateSize();
+        })
+    </script>
+</body>
+
+</html>

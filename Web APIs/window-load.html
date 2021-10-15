@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load</title>
+    <!-- DOMContentLoaded가 호출되기 직전에 호출 -->
+    <script src="test.js" defer></script>
+</head>
+
+<body>
+    <script>
+        //html만 완료되면 호출
+        window.addEventListener("DOMContentLoaded", () => {
+            console.log("DOMContentLoaded");
+        })
+
+        //css, image 등 모든 resource들이 load된 후에 호출
+        window.addEventListener("load", () => {
+            console.log("load");
+        })
+
+        //사용자가 페이지를 끄기 직전(즉, unload직전)에 호출
+        window.addEventListener("beforeunload", () => {
+            console.log("beforeunloaded");
+        })
+
+        //모든 resource들이 unloaded된 후 호출
+        window.addEventListener("unload", () => {
+            console.log("unloaded");
+        })
+    </script>
+</body>
+
+</html>
